@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function Loading() {
 	return (
-		<View style={styleSheet.container}>
-			<Text style={styleSheet.text}>Getting the Fucking Weather</Text>
+		<View style={styles.container}>
+			<Text style={styles.text}>Getting the fucking weather</Text>
 		</View>
 	);
 }
@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
 		justifyContent: 'flex-end',
 		paddingHorizontal: 30,
 		paddingVertical: 100,
-		backgroundColor: '#ffeaa7',
+		backgroundColor: '#FDF6AA',
 	},
 	text: {
-		color: '#b2bec3',
+		color: '#2c2c2c',
 		fontSize: 50,
 	},
 });
