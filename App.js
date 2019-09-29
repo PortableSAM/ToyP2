@@ -1,19 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert } from 'react-native';
+import Loading from './Loading';
+import * as Loaction from 'expo-location';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+export default class extends React.Component {
+	state = {
+		isLoading: true,
+	};
+	getLocation = async () => {
+		try {
+			await Loaction.requestPermissionsAsync();
+			const {
+				coords: { latitude, longitude },
+			} = await Loaction.getCurrentPositionAsync();
+			this.setState({ isLoading: false });
+		} catch (error) {
+			Alert.alert("Can't find you.", 'So sad');
+		}
+	};
+	componentDidMount() {
+		this.getLocation();
+	}
+	render() {
+		const { isLoading } = this.state;
+		return isLoading ? <Loading /> : null;
+	}
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
