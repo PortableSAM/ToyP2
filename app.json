@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Learning React Native. Mobile Weather App(build 2019.09)",
+    "githubUrl": "https://github.com/PortableSAM/ToyP2"
   }
 }
