@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 const weatherOptions = {
 	Thunderstorm: {
 		iconName: 'weather-lightning-rainy',
@@ -101,8 +102,6 @@ Weather.propTypes = {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
 	},
 	temp: {
 		fontSize: 42,
@@ -118,14 +117,18 @@ const styles = StyleSheet.create({
 		fontSize: 44,
 		fontWeight: '300',
 		marginBottom: 10,
+		textAlign: 'left',
 	},
 	subtitle: {
 		fontWeight: '600',
 		color: '#dfe6e9',
 		fontSize: 24,
+		textAlign: 'left',
 	},
 	textContainer: {
-		paddingHorizontal: 20,
 		alignItems: 'flex-start',
+		paddingHorizontal: 40,
+		justifyContent: 'center',
+		flex: 1,
 	},
 });
